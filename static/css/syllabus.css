@@ -14,10 +14,15 @@ body {
 
 
 table .class-schedule: {
+
     background-color: rgb(240,224,178);
     color: rgb(0,102,0);
     margin: 5px;
     padding: 3px;
+}
+
+tr.highlight{
+	background-color: yellow;
 }
 
 tr.odd {

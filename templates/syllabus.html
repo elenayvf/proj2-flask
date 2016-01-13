@@ -13,11 +13,18 @@
 
 <table class="class-schedule">
   {% for entry in session.schedule %}
-  {% if loop.index is divisibleby 2 %}
+  
+  {% if loop.index == 5%}
+  
+  <tr class="highlight">
+ 
+  {% elif loop.index is divisibleby 2 %}
   <tr class="even">
-  {% else %}
+   
+   {% else %}
   <tr class="odd">
-  {% endif %}	   
+  {% endif %}	
+    <td class="date">{{ entry.date}}</td>   
     <td class="week">{{ entry.week }}</td>
     <td class="topic">{{ entry.topic }}</td>
     <td class="project">{{ entry.project}}</td>

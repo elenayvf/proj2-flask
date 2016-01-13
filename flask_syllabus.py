@@ -72,7 +72,11 @@ def format_arrow_date( date ):
     except:
         return "(bad date)"
 
-
+def highlight_week():
+	#return current week num
+	current = arrow.now()
+		
+	
 #############
 #    
 # Set up to run from cgi-bin script, from

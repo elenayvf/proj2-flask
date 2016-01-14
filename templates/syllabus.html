@@ -14,7 +14,7 @@
 <table class="class-schedule">
   {% for entry in session.schedule %}
   
-  {% if loop.index == 5%}
+  {% if entry.this_week is sameas true%}
   
   <tr class="highlight">
  

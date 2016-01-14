@@ -45,13 +45,22 @@ def process(raw):
 			entry['project'] = ""
 			entry['week'] = content
 			
+			
+			#fixed date here 
 			if int(content) == 1:
 				entry['date'] = base.format("ddd MM/DD/YYYY")
+				current = arrow.now()
+				current_week = current.isocalendar()
+				this_week = base.isocalendar()
+				entry['this_week'] = (current_week[1] == this_week[1])
 			else:
 				new_date = base.replace(weeks= +(int(content) -1))
 				entry['date'] = new_date.format("ddd MM/DD/YYYY")
-			
-   		
+				current = arrow.now()
+				current_week = current.isocalendar()
+				this_week = new_date.isocalendar()
+				entry['this_week'] = (current_week[1] == this_week[1])
+   			
 
 		elif field == 'topic' or field == 'project':
 			entry[field] = content

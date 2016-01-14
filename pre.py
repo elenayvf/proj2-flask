@@ -49,6 +49,7 @@ def process(raw):
 			#fixed date here 
 			if int(content) == 1:
 				entry['date'] = base.format("ddd MM/DD/YYYY")
+				#highlight current date
 				current = arrow.now()
 				current_week = current.isocalendar()
 				this_week = base.isocalendar()
@@ -56,6 +57,7 @@ def process(raw):
 			else:
 				new_date = base.replace(weeks= +(int(content) -1))
 				entry['date'] = new_date.format("ddd MM/DD/YYYY")
+				#highlight current date
 				current = arrow.now()
 				current_week = current.isocalendar()
 				this_week = new_date.isocalendar()
